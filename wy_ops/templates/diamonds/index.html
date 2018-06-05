@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ops</title>
+</head>
+<body>
+<H1> welcome to ops site </H1>
+<div>
+    <H4> 查询某个用户的钻石和金币信息 </H4>
+    <form action="/wyops/displayinfo" method="post">
+        {% csrf_token %}
+        <label>请输入用户ID：</label> <input type="text" name="inputdispayid">
+        <input type="submit" name="" value="提交">
+    </form>
+</div>
+<hr>
+<hr>
+<div>
+    <form action="/wyops/changermb" method="post">
+        {% csrf_token %}
+        <label>请输入用户ID：</label> <input type="text" name="changeuserid"> &nbsp &nbsp &nbsp
+        <label>增加钻石数:</label> <input type="text" name="adddiamond">
+        <input type="submit" name="" value="提交">
+    </form>
+
+</div>
+</body>
+</html>

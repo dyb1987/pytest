@@ -1,7 +1,7 @@
 from django.db import models
 import datetime
 # django admin 用户为: testpwd,
-
+# djang admin 为 adminpwd123,
 
 # Create your models here.
 # 修改日志结构：

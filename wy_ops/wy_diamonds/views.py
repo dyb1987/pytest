@@ -9,11 +9,11 @@ def index(request):
     return render(request, 'diamonds/index.html')
 
 db_info = {
-        'host': '192.168.56.10',
+        'host': '192.168.1.150',
         'user': 'root',
-        'password': '1234567',
+        'password': 'cqmfindbpwd',
         'db': 'gamedb_xsbh',
-        'port': 3306,
+        'port': 33306,
         'charset': 'utf8mb4',
         'cursorclass': pymysql.cursors.DictCursor,
     }
@@ -51,7 +51,7 @@ def displayinfo(request):
         print("please use post method to post data")
         exit(1)
     else:
-        role_id = int(dis_uid)^20517
+        role_id = int(dis_uid)^25017
 
     exec_sql = 'SELECT ROLEID,ACCOUNTID,MONEY,RMB,`NAME`,FROM_UNIXTIME(LASTOFFLINETIME) as offtime from t_role WHERE roleid = %s'% (str(role_id))
     data = getdata(exec_sql)
@@ -59,6 +59,7 @@ def displayinfo(request):
 
     if len(data) < 1:
         print("don't get any data")
+        exit(2)
     elif len(data) == 1:
         data_dict = data[0] #取出 数据里面的字段
     else:
@@ -85,7 +86,7 @@ def changermb(request):
         print("please use post method to post data")
         exit(1)
     else:
-        role_id = int(dis_uid)^20517
+        role_id = int(dis_uid)^25017
 
     if role_id == '':
         print("Change rmd didn't get role ID,exit")
@@ -109,6 +110,7 @@ def changermb(request):
 
         if len(data) < 1:
             print("don't get any data")
+            exit(2)
         elif len(data) == 1:
             data_dict = data[0] #取出 数据里面的字段
         else:

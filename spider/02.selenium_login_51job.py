@@ -23,7 +23,7 @@ driver_explorer.save_screenshot("51job.png")
 
 #输入用户名和密码
 driver_explorer.find_element_by_id("loginname").send_keys("283931991@qq.com")
-driver_explorer.find_element_by_id("password").send_keys("dengpwd,")
+driver_explorer.find_element_by_id("password").send_keys("")
 
 # 确认点击登录
 driver_explorer.find_element_by_id('login_btn').click()
